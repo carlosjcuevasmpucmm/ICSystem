@@ -43,7 +43,15 @@ payed:{
     type: Boolean,
     default: false,
     required: true
-}
+},
+
+
+//El diagrama sugiere un metodo que encuentre la lista donde esta la orden.
+odersPack: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: 'OrdersPackModel',
+  required: true
+},
 
 });
 
