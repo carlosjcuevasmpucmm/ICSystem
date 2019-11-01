@@ -1,10 +1,11 @@
 const order = require('../models/ordersPack');
+
 module.exports = {
 
  //COnseguir l ista por id   
  getById: function(req, res, next) {
   
-  order.findById(req.params.orderId, function(err, result){
+  order.findById(req.params.ordersPackId, function(err, result){
    if (err) {
     next(err);
    } else {
@@ -36,7 +37,7 @@ order.find({}, function(err, orders){
  },
  //Actualiza lista por id
 updateById: function(req, res, next) {
-  order.findByIdAndUpdate(req.params.orderId,{name:req.body.name}, function(err, result){
+  order.findByIdAndUpdate(req.params.ordersPackId,{name:req.body.name}, function(err, result){
 if(err)
     next(err);
    else {
@@ -46,11 +47,11 @@ if(err)
  },
  //Elimina lista de ordenes por id
 deleteById: function(req, res, next) {
-  order.findByIdAndRemove(req.params.orderId, function(err, result){
+  order.findByIdAndRemove(req.params.ordersPackId, function(err, result){
    if(err)
     next(err);
    else {
-    res.json({status:"success", message: "order deleted successfully", data:null});
+    res.json({status:"success", message: "List de ordenes eliminada!", data:{orderPack: result}});
    }
   });
  },
