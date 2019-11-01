@@ -25,5 +25,39 @@ module.exports = {
                         )
 
     },
+
+    getAll: function(req, res, next) {
+        let orderList = [];
+      OrderModel.find({}, function(err, order){
+         if (err){
+          next(err);
+         } else{
+          for (let or of order) {
+           orderList.push({description: or.description, 
+            size: or.size, 
+            flavor: or.flavor,
+            price: or.price,
+            payment: or.payment,
+            payed: or.payed,
+            guid: or.guid,
+            ordersPack: or.ordersPack});
+          }
+          res.json({status:"success", message: "Lista de ordenes!!!", data:{order: orderList}});
+             
+         }
+      });
+       },
+
+    deleteById: function(req, res, next) {
+        OrderModel.findByIdAndRemove(req.params.orderId, function(err, orderInfo){
+         if(err)
+          next(err);
+         else {
+          res.json({status:"success", message: "La orden fue borrada!!!", data:{order: result }});
+         }
+        });
+    },
+
+
       
 }
