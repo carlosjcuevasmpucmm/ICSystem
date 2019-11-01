@@ -23,6 +23,7 @@ const logger = require('morgan');
 //Rutas del servidor
 const users = require('./routes/users');
 const order = require('./routes/order');
+const ordersPack = require('./routes/ordersPack');
 
 //Senala mongoose el directorio para la conexion a la base de datos
 const mongoose = require('./config/database'); //database configuration
@@ -49,6 +50,7 @@ app.use('/users', users);
 
 // private route - Accedr con autenticacion
 app.use('/order', validateUser, order);
+app.use('/ordersPack', validateUser, ordersPack);
 
 app.get('/favicon.ico', function(req, res) {
     res.sendStatus(204);

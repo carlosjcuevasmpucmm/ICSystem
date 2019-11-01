@@ -13,7 +13,7 @@ const OrdersPack = new Schema({
       },
     
     //Arreglo de ordenes, asociado al modelado de la clase Order.
-    Order: [{
+    order: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'OrderModel',
       }],
@@ -32,13 +32,13 @@ const OrdersPack = new Schema({
     },
 });
 
-// Una lista por usuario
-OrdersPack.index({
-  _id: 1,
-  creator: 1,
-},
-{
-unique:true
-})
+// Una lista por usuario dado id
+// OrdersPack.index({
+//   _id: 1,
+//   creator: 1,
+// },
+// {
+// unique:true
+// })
 
 module.exports = mongoose.model('OrdersPackModel', OrdersPack)
