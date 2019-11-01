@@ -4,11 +4,21 @@ const Schema = mongoose.Schema;
 //Modelado de la clase order, vista en el diagrama
 const OrderSchema = new Schema({
 
+  //ajenos al diagrama, esta en los requerimientos (producto, tamano y sabor)
  description: {
   type: String,
   trim: true,  
   required: true,
  },
+
+ Size: {
+  type: String,
+  
+},
+flavor: {
+  type: String,
+  required: true
+},
 
  price: Number,
  
