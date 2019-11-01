@@ -46,4 +46,13 @@ payed:{
 }
 
 });
+
+// Una orden solo tiene 1 usuario
+OrderSchema.index({
+  guid: 1,
+},
+{
+unique:true
+})
+
 module.exports = mongoose.model('OrderModel', OrderSchema)
