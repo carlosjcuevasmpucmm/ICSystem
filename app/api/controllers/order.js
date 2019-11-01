@@ -1,5 +1,5 @@
 //Acceder al modelado de la clase Order
-const orderRepository = require('../models/order');
+const orderModel = require('../models/order');
 
 //Metodos - A interpretarse como el modelado de OrderRepository
 module.exports = {
@@ -7,14 +7,17 @@ module.exports = {
  //Conseguir orden por su id   
  getById: function(req, res, next) {
   console.log(req.body);
-  movieModel.findById(req.params.movieId, function(err, movieInfo){
+  //De la ruta, se obtiene el id
+  orderModel.findById(req.params.movieId, function(err, orderInfo){
    if (err) {
     next(err);
    } else {
-    res.json({status:"success", message: "Movie found!!!", data:{movies: movieInfo}});
+       //Retorna la data de contiene la orden como un json
+    res.json({status:"success", message: "Movie found!!!", data:{order: orderInfo}});
    }
   });
  },
+
 getAll: function(req, res, next) {
   let moviesList = [];
 movieModel.find({}, function(err, movies){
@@ -30,7 +33,8 @@ movieModel.find({}, function(err, movies){
 });
  },
 updateById: function(req, res, next) {
-  movieModel.findByIdAndUpdate(req.params.movieId,{name:req.body.name}, function(err, movieInfo){
+    
+  movieModel.findByIdAndUpdate(req.params.orderId,{name:req.body.name}, function(err, movieInfo){
 if(err)
     next(err);
    else {
@@ -47,8 +51,10 @@ deleteById: function(req, res, next) {
    }
   });
  },
+
+//Crear una orden 
 create: function(req, res, next) {
-  movieModel.create({ name: req.body.name, released_on: req.body.released_on }, function (err, result) {
+  orderModel.create({ name: req.body.name, released_on: req.body.released_on }, function (err, result) {
       if (err) 
        next(err);
       else
