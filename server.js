@@ -8,6 +8,10 @@
  * entre otras dependencias de asistencia...
  * 
  * El objetivo esta contenido en el archivo Order-ice-cream-app-homework
+ * 
+ * En el manejo de git fue un poco turbio, debido a lo abrumador de las nuevas tecnologias y trabajr con el en primera vez
+ * *Algunos commit tienen mensajes referentes al futuro, esto entiendo estuvo mal, ya que solo se referencia al presente commit
+ * *Mezcla de idiomas
  *  
  * ============================================================
  */
