@@ -11,47 +11,47 @@ const OrderSchema = new Schema({
   required: true,
  },
 
- Size: {
-  type: String,
+//  Size: {
+//   type: String,
   
-},
-flavor: {
-  type: String,
-  required: true
-},
+// },
+// flavor: {
+//   type: String,
+//   required: true
+// },
 
- price: Number,
+//  price: Number,
  
- //Sera asignado un objeto model de un usuario exportado como 'UserModel'
- guid: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'UserModel',
-    required: true
-  },
+//  //Sera asignado un objeto model de un usuario exportado como 'UserModel'
+//  guid: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: 'UserModel',
+//     required: true
+//   },
 
-//Un arreglo de String, que de no recibir entrada correcta, efectivo por defecto
- payment: {
-    type: String,
-    enum: ['tarjeta','efectivo'],
-    default: 'efectivo',
-    required: true,
-    trim: true
-},
-
-
-payed:{    
-    type: Boolean,
-    default: false,
-    required: true
-},
+// //Un arreglo de String, que de no recibir entrada correcta, efectivo por defecto
+//  payment: {
+//     type: String,
+//     enum: ['tarjeta','efectivo'],
+//     default: 'efectivo',
+//     required: true,
+//     trim: true
+// },
 
 
-//El diagrama sugiere un metodo que encuentre la lista donde esta la orden.
-odersPack: {
-  type: mongoose.Schema.Types.ObjectId,
-  ref: 'OrdersPackModel',
-  required: true
-},
+// payed:{    
+//     type: Boolean,
+//     default: false,
+//     required: true
+// },
+
+
+// //El diagrama sugiere un metodo que encuentre la lista donde esta la orden.
+// odersPack: {
+//   type: mongoose.Schema.Types.ObjectId,
+//   ref: 'OrdersPackModel',
+//   required: true
+// },
 
 });
 
