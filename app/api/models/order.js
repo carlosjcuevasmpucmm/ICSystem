@@ -11,14 +11,14 @@ const OrderSchema = new Schema({
   required: true,
  },
 
-//  Size: {
-//   type: String,
+ size: {
+  type: String,
   
-// },
-// flavor: {
-//   type: String,
-//   required: true
-// },
+},
+flavor: {
+  type: String,
+  required: true
+},
 
 //  price: Number,
  
