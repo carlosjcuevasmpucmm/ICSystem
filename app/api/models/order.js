@@ -5,22 +5,23 @@ const Schema = mongoose.Schema;
 const OrderSchema = new Schema({
 
   //ajenos al diagrama, esta en los requerimientos (producto, tamano y sabor)
- description: {
+  description: {
   type: String,
   trim: true,  
   required: true,
- },
+  },
 
- size: {
-  type: String,
+  size: {
+    type: String,
   
-},
-flavor: {
-  type: String,
-  required: true
-},
+  },
 
-//  price: Number,
+  flavor: {
+    type: String,
+    required: true
+  },
+
+  price: Number,
  
 //  //Sera asignado un objeto model de un usuario exportado como 'UserModel'
 //  guid: {
