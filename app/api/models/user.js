@@ -50,7 +50,7 @@ next();
  *  Un correo por usuario, debe ser unico
  *  Una lista de ordenes (ordersPack), unico
  */
-userSchema.index({
+UserSchema.index({
     email: 1,
     ordersPack: 1,
   },
