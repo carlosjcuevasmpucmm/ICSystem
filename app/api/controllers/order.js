@@ -4,7 +4,7 @@ const UserModel = require('../models/user');
 const OrdersPackModel = require('../models/ordersPack');
 
 module.exports = {
-    // Create one orden
+    // Crear una orden
     create: function(req, res, next) {
      OrderModel.create(
                         {description: req.body.description, 
@@ -26,6 +26,7 @@ module.exports = {
 
     },
 
+    //Conseguir todas las ordenes
     getAll: function(req, res, next) {
         let orderList = [];
       OrderModel.find({}, function(err, order){
@@ -50,6 +51,19 @@ module.exports = {
       });
        },
 
+       //Mostrar una sola orden
+       getById: function(req, res, next) {
+        console.log(req.body);
+        OrderModel.findById(req.params.orderId, function(err, result){
+         if (err) {
+          next(err);
+         } else {
+          res.json({status:"success", message: "Orden encontrada!", data:{order: result}});
+         }
+        });
+       },
+
+     //Eliminar una orden  
     deleteById: function(req, res, next) {
         OrderModel.findByIdAndRemove(req.params.orderId, function(err, result){
          if(err)
@@ -59,6 +73,26 @@ module.exports = {
          }
         });
     },
+
+     //Actualizar una orden
+     updateById: function(req, res, next) {
+        OrderModel.findByIdAndUpdate(req.params.orderId,{
+            description: req.body.description, 
+                                size: req.body.size, 
+                                flavor: req.body.flavor,
+                                price: req.body.price,
+                                payment: req.body.payment,
+                                payed: req.body.payed,
+                                guid: req.body.guid,
+                                ordersPack: req.body.ordersPack
+        }, function(err, result){
+      if(err)
+          next(err);
+         else {
+          res.json({status:"success", message: "Orden actualizada!", data: {order: result}});
+         }
+        });
+       },
 
 
       
