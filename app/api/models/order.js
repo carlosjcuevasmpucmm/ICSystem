@@ -38,12 +38,12 @@ payed:{
     required: true
 },
  
-//  //Sera asignado un objeto model de un usuario exportado como 'UserModel'
-//  guid: {
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'UserModel',
-//     required: true
-//   },
+ //Sera asignado un objeto model de un usuario exportado como 'UserModel'
+ guid: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'UserModel',
+    required: true
+  },
 
 
 // //El diagrama sugiere un metodo que encuentre la lista donde esta la orden.
