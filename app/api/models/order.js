@@ -46,12 +46,12 @@ payed:{
   },
 
 
-// //El diagrama sugiere un metodo que encuentre la lista donde esta la orden.
-// ordersPack: {
-//   type: mongoose.Schema.Types.ObjectId,
-//   ref: 'OrdersPackModel',
-//   required: true
-// },
+//El diagrama sugiere un metodo que encuentre la lista donde esta la orden.
+ordersPack: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: 'OrdersPackModel',
+  required: true
+},
 
 });
 
