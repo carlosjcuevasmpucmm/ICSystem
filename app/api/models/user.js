@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+
+//Se usara para el hash de la clave de usuario
 const saltRounds = 10;
 
 //Modelado de la clase User como Tabla tipo Schema
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    
+
  name: {
   type: String,
   trim: true,  
@@ -37,7 +39,8 @@ ordersPack: {
 
 
 });
-// hash user password before saving into database
+
+// hash para la password del usuario. 
 UserSchema.pre('save', function(next){
 this.password = bcrypt.hashSync(this.password, saltRounds);
 next();
