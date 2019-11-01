@@ -23,14 +23,14 @@ const OrderSchema = new Schema({
 
   price: Number,
 
-//   //Un arreglo de String, que de no recibir entrada correcta, efectivo por defecto
-//  payment: {
-//     type: String,
-//     enum: ['tarjeta','efectivo'],
-//     default: 'efectivo',
-//     required: true,
-//     trim: true
-// },
+  //Un arreglo de String, que de no recibir entrada correcta, efectivo por defecto
+ payment: {
+    type: String,
+    enum: ['tarjeta','efectivo'],
+    default: 'efectivo',
+    required: true,
+    trim: true
+},
 
 payed:{    
     type: Boolean,
