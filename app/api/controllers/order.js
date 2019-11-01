@@ -40,7 +40,9 @@ module.exports = {
             payment: or.payment,
             payed: or.payed,
             guid: or.guid,
-            ordersPack: or.ordersPack});
+            ordersPack: or.ordersPack,
+            id: or._id
+            });
           }
           res.json({status:"success", message: "Lista de ordenes!!!", data:{order: orderList}});
              
@@ -49,11 +51,11 @@ module.exports = {
        },
 
     deleteById: function(req, res, next) {
-        OrderModel.findByIdAndRemove(req.params.orderId, function(err, orderInfo){
+        OrderModel.findByIdAndRemove(req.params.orderId, function(err, result){
          if(err)
           next(err);
          else {
-          res.json({status:"success", message: "La orden fue borrada!!!", data:{order: result }});
+          res.json({status:"success", message: "La orden fue borrada!!!", data:null});
          }
         });
     },
