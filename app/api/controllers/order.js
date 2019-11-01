@@ -19,7 +19,7 @@ module.exports = {
                             if (err) 
                              next(err);
                             else
-                             res.json({status: "success", message: "Movie added successfully!!!", data: null});
+                             res.json({status:"success", message: "Se creo la orden", data:{order: result }});
                              
                             }
                         )

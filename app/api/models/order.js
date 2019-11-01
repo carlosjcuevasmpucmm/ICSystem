@@ -7,8 +7,8 @@ const OrderSchema = new Schema({
   //ajenos al diagrama, esta en los requerimientos (producto, tamano y sabor)
  description: {
   type: String,
-  trim: true,  
-  required: true,
+  // trim: true,  
+  // required: true,
  },
 
 //  Size: {
@@ -56,11 +56,11 @@ const OrderSchema = new Schema({
 });
 
 // Una orden solo tiene 1 usuario
-OrderSchema.index({
-  guid: 1,
-},
-{
-unique:true
-})
+// OrderSchema.index({
+//   guid: 1,
+// },
+// {
+// unique:true
+// })
 
 module.exports = mongoose.model('OrderModel', OrderSchema)
