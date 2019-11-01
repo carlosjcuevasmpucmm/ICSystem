@@ -7,8 +7,8 @@ const OrderSchema = new Schema({
   //ajenos al diagrama, esta en los requerimientos (producto, tamano y sabor)
  description: {
   type: String,
-  // trim: true,  
-  // required: true,
+  trim: true,  
+  required: true,
  },
 
 //  Size: {
