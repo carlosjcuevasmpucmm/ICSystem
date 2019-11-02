@@ -8,11 +8,13 @@ const saltRounds = 10;
 const Schema = mongoose.Schema;
 const UserSchema = new Schema({
 
+ 
  name: {
   type: String,
   trim: true,  
   required: true,
  },
+ 
  email: {
   type: String,
   trim: true,
@@ -24,11 +26,13 @@ const UserSchema = new Schema({
   required: true
  },
 
+ //Arreglo de ordenes que el usuario ha participado
  order: [{
   type: mongoose.Schema.Types.ObjectId,
   ref: 'OrderModel',
   }],
 
+  //Lista de orden creada por el usuario.
 ordersPack: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'OrdersPackModel',
@@ -42,6 +46,8 @@ UserSchema.pre('save', function(next){
 this.password = bcrypt.hashSync(this.password, saltRounds);
 next();
 });
+
+
 
 /**
  *  Un correo por usuario, debe ser unico
