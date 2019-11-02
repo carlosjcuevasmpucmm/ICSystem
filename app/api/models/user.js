@@ -49,17 +49,17 @@ next();
 
 
 
-/**
- *  Un correo por usuario, debe ser unico
- *  Una lista de ordenes (ordersPack), unico
- */
-// UserSchema.index({
-//     email: 1,
-//     ordersPack: 1,
-//   },
-//   {
-//   unique:true
-//   })
+
+  //  Un correo por usuario, debe ser unico
+  //  Una lista de ordenes (ordersPack), unico
+ 
+UserSchema.index({
+    email: 1,
+    ordersPack: 1,
+  },
+  {
+  unique:true
+  })
 
 
 module.exports = mongoose.model('UserModel', UserSchema);
