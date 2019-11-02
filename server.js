@@ -1,16 +1,3 @@
-/**
- * Proyecto realizado con tecnologias como:
- * Nodejs: javascript runtime enviorement para los browsers
- * Express: Ayuda con el "heavylifting" para la configuracion de un servidor en Nodejs
- * Mongodb: Base de datos no relacional, donde guardara la data de la app
- * Mongoose: Intermediario entre Mongodb y Express, facilita el manejo con la base de datos
- * JWT: Usado para el manejo de autenticacion de usuario.
- * entre otras dependencias de asistencia...
- * 
- *  
- * ============================================================
- */
-
 
 const express = require('express');
 const logger = require('morgan');
