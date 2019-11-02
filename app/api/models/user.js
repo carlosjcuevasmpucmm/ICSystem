@@ -29,11 +29,10 @@ const UserSchema = new Schema({
   ref: 'OrderModel',
   }],
 
-// ordersPack: {
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: 'OrdersPackModel',
-    
-//   }  
+ordersPack: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'OrdersPackModel',
+  }  
 
 
 });
