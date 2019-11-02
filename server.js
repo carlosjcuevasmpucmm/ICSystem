@@ -16,7 +16,7 @@ const express = require('express');
 const logger = require('morgan');
 
 //Rutas del servidor
-const users = require('./routes/users');
+
 const user = require('./routes/user');
 const order = require('./routes/order');
 const ordersPack = require('./routes/ordersPack');
@@ -42,7 +42,7 @@ res.json({"ICSytem" : "Logistica de ordenes de helados"});
 });
 
 // public route - Acceder sin auntenticacion
-app.use('/users', users);
+
 app.use('/user', user);
 
 
