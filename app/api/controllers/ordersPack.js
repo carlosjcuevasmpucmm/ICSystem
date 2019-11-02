@@ -58,7 +58,7 @@ deleteById: function(req, res, next) {
  //Crea una lista de ordenes
 create: function(req, res, next) {
   order.create({creator: req.body.creator,
-                 order: req.body.order,
+                order: req.body.order,
                 creationDate: req.body.creationDate,
                 expirationDate: req.body.expirationDate},
              function (err, result) {

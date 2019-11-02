@@ -6,7 +6,6 @@ const saltRounds = 10;
 
 //Modelado de la clase User como Tabla tipo Schema
 const Schema = mongoose.Schema;
-
 const UserSchema = new Schema({
 
  name: {
@@ -25,17 +24,16 @@ const UserSchema = new Schema({
   required: true
  },
 
- order: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'OrderModel',
-    required: true
-  },
+ order: [{
+  type: mongoose.Schema.Types.ObjectId,
+  ref: 'OrderModel',
+  }],
 
-ordersPack: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'OrdersPackModel',
-    required: true
-  }  
+// ordersPack: {
+//     type: mongoose.Schema.Types.ObjectId,
+//     ref: 'OrdersPackModel',
+    
+//   }  
 
 
 });
@@ -50,13 +48,13 @@ next();
  *  Un correo por usuario, debe ser unico
  *  Una lista de ordenes (ordersPack), unico
  */
-UserSchema.index({
-    email: 1,
-    ordersPack: 1,
-  },
-  {
-  unique:true
-  })
+// UserSchema.index({
+//     email: 1,
+//     ordersPack: 1,
+//   },
+//   {
+//   unique:true
+//   })
 
 
 module.exports = mongoose.model('UserModel', UserSchema);
